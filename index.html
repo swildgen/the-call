@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000">
+  <title>The Call, Dec 2-6, 2026 · The Thyme, Connecticut</title>
+  <meta name="description" content="Five days of dance at The Thyme in Salisbury, Connecticut. December 2-6, 2026. A 360 Emergence event. Rooms from $1,680.">
+  <link rel="canonical" href="https://call.dance/">
+  <meta property="og:title" content="The Call, Dec 2-6, 2026">
+  <meta property="og:description" content="Five days of dance at The Thyme in the Berkshires, held by 360 Emergence. Rooms from $1,680.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://call.dance/">
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #f3f3f3;
+      --muted: #8c8c8c;
+      --dim: #5c5c5c;
+      --line: #222;
+      --max: 44rem;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: -0.011em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover { color: #fff; }
+
+    :focus-visible {
+      outline: 1px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 0;
+    }
+
+    .skip:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 20;
+      background: #000;
+      padding: 0.4rem 0.6rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #000;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bar {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .mark {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.15rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav a { text-decoration: none; color: var(--muted); }
+    nav a:hover { color: #fff; }
+    nav a.book { color: #fff; }
+
+    main { padding: 0 1.25rem 6rem; }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16vh 0 6vh;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.6rem, 16vw, 6.4rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 0.86;
+    }
+
+    .hero p {
+      margin-top: 1.75rem;
+      max-width: 26rem;
+      font-size: 1.15rem;
+      line-height: 1.45;
+    }
+
+    .meta {
+      margin-top: 2.25rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .section {
+      max-width: var(--max);
+      margin: 3.25rem auto 0;
+      padding: 3.25rem 0 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 4rem;
+    }
+
+    .section h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .ico {
+      width: 14px;
+      height: 14px;
+      stroke: var(--muted);
+      fill: none;
+      stroke-width: 1.4;
+      flex-shrink: 0;
+    }
+
+    .section p + p { margin-top: 1rem; }
+
+    .section ul {
+      margin: 1rem 0 0 1.1rem;
+    }
+
+    .section li + li { margin-top: 0.35rem; }
+
+    .teachers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem 1.4rem;
+    }
+
+    .teachers article {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 0.15rem 0.85rem;
+      align-items: start;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #111;
+      grid-row: 1 / span 2;
+      cursor: zoom-in;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.28);
+    }
+
+    .teachers h3 {
+      font-size: 1.02rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .teachers .role {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin: 0;
+    }
+
+    .teachers p:last-child {
+      font-size: 0.92rem;
+      color: #ddd;
+      margin: 0.45rem 0 0;
+      grid-column: 1 / -1;
+    }
+
+    .houses { margin-top: 1.75rem; }
+
+    .house {
+      display: grid;
+      grid-template-columns: 15.75rem 1fr;
+      gap: 0.85rem 1.15rem;
+      align-items: start;
+      padding: 1.15rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .house:last-of-type { border-bottom: 1px solid var(--line); }
+
+    .house.land { grid-template-columns: 1fr; }
+
+    .photo {
+      display: block;
+      padding: 0;
+      border: 0;
+      background: #111;
+      cursor: zoom-in;
+      width: 100%;
+    }
+
+    .photo:focus-visible {
+      outline: 1px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .thumb {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .house h3 {
+      font-size: 1.02rem;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+    }
+
+    .house .note {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 0.15rem 0 0.55rem;
+    }
+
+    .land-thumbs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.45rem;
+      margin-top: 0.7rem;
+    }
+
+    .land-thumbs .photo { width: 100%; }
+
+    .land-thumbs img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.48rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .row span:first-child { color: #ddd; }
+    .price {
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      letter-spacing: -0.02em;
+    }
+
+    .fine {
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .airports {
+      display: grid;
+      gap: 0;
+      margin-top: 1.25rem;
+    }
+
+    .airports div {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .airports div:last-child { border-bottom: 1px solid var(--line); }
+
+    .airports strong { font-weight: 500; }
+    .airports span { color: var(--muted); text-align: right; }
+
+    .cta {
+      display: inline-block;
+      margin-top: 1.75rem;
+      padding: 0.85rem 1.15rem;
+      border: 1px solid #fff;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .cta:hover { background: #fff; color: #000; }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+    }
+
+    .cta-row .ghost {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4rem 1.25rem 3rem;
+      color: var(--dim);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--muted); }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.25rem 1.5rem;
+      background: rgba(0, 0, 0, 0.92);
+    }
+
+    .lightbox:not([hidden]) { display: flex; }
+
+    .lightbox[hidden] { display: none; }
+
+    .lightbox img {
+      max-width: min(68rem, 94vw);
+      max-height: 86vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      border: 0;
+      background: none;
+      color: #fff;
+      font-size: 1.7rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0.35rem 0.5rem;
+    }
+
+    @media (max-width: 720px) {
+      .teachers { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .bar { padding: 0.75rem 1rem; }
+      nav { gap: 0.5rem 0.8rem; letter-spacing: 0.06em; }
+      .hero { padding: 10vh 0 4vh; }
+      main { padding: 0 1rem 5rem; }
+      .house { grid-template-columns: 1fr; }
+      .thumb { max-width: 18rem; }
+      .land-thumbs { grid-template-columns: 1fr 1fr; }
+      .row, .airports div { flex-direction: column; gap: 0.2rem; }
+      .airports span { text-align: left; }
+      .section { padding-top: 2.75rem; margin-top: 2.75rem; scroll-margin-top: 5.75rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "The Call",
+    "description": "A five-day dance retreat at The Thyme in Salisbury, Connecticut. A 360 Emergence event.",
+    "startDate": "2026-12-02",
+    "endDate": "2026-12-06",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "The Thyme",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "564 Under Mountain Rd",
+        "addressLocality": "Salisbury",
+        "addressRegion": "CT",
+        "postalCode": "06068",
+        "addressCountry": "US"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "The 360 Emergence",
+      "url": "https://the360emergence.com"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "1680",
+      "highPrice": "2940",
+      "priceCurrency": "USD",
+      "url": "https://the360emergence.com/product/the-call-module-1-new-york-the-thyme/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header>
+    <div class="bar">
+      <a class="mark" href="#top">The Call</a>
+      <nav>
+        <a href="#dance">Dance</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#stay">Stay</a>
+        <a href="#travel">Travel</a>
+        <a class="book" href="#book">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="content">
+      <h1>The Call</h1>
+      <p>Five days of dance in the Berkshires, held by 360 Emergence.</p>
+      <p class="meta">
+        December 2-6, 2026<br>
+        The Thyme · Salisbury, Connecticut<br>
+        $1,680-$2,940, room and meals included
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="https://the360emergence.com/product/the-call-module-1-new-york-the-thyme/">Book a room</a>
+      </div>
+    </section>
+
+    <section class="section" id="dance">
+      <h2>
+        <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/></svg>
+        The dance
+      </h2>
+      <p>You dance. Then you eat. Then you sleep on the land and do it again. Long practice sessions, music that actually goes somewhere, and a room of people in it with you.</p>
+      <p>The Thyme is 85 acres on the line between Connecticut and Massachusetts, about two and a half hours north of New York. The days are physical. The house is alcohol-free.</p>
+      <p>Louisa Heckett and Rachel Jordana are on the music.</p>
+      <p>You don't need any 360 background. People already in the apprenticeship or facilitator training will be there too. Same room, same dance.</p>
+    </section>
+
+    <section class="section" id="teachers">
+      <h2>
+        <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><circle cx="5" cy="5" r="1.7"/><circle cx="11" cy="5" r="1.7"/><circle cx="5" cy="11" r="1.7"/><circle cx="11" cy="11" r="1.7"/></svg>
+        Teachers
+      </h2>
+      <div class="teachers">
+        <article>
+          <button type="button" class="avatar photo" data-full="img/teachers/amber.jpg" aria-label="View Amber Ryan">
+            <img src="img/teachers/amber.jpg" alt="Amber Ryan">
+          </button>
+          <h3>Amber Ryan</h3>
+          <p class="role">Leads the retreat · 360 co-founder</p>
+          <p>The Call is led and curated by Amber. She's a dancer, teacher, and DJ, with decades in transformative dance and a background in theatre and voice. She brings music and movement into the same room and she knows how to hold it.</p>
+        </article>
+        <article>
+          <button type="button" class="avatar photo" data-full="img/teachers/allyssa.jpg" aria-label="View Allyssa Rivera">
+            <img src="img/teachers/allyssa.jpg" alt="Allyssa Rivera">
+          </button>
+          <h3>Allyssa Rivera</h3>
+          <p class="role">Senior teacher · A-li-sha · she/her/ella</p>
+          <p>Allyssa is a senior 360 teacher and a dance/movement therapist. She trained at Sarah Lawrence and NYU, and she now teaches graduate students at Sarah Lawrence. Born in Puerto Rico, she lives in Brooklyn and still works with dance in clinical settings.</p>
+        </article>
+        <article>
+          <button type="button" class="avatar photo" data-full="img/teachers/louisa.png" aria-label="View Louisa Heckett">
+            <img src="img/teachers/louisa.png" alt="Louisa Heckett">
+          </button>
+          <h3>Louisa Heckett</h3>
+          <p class="role">Music</p>
+          <p>Louisa is a DJ and movement teacher who splits her time between Ireland, Spain, and Costa Rica. She started on vinyl in the nineties and still builds long sets that can actually move a room. For her, the music is the other half of the dance.</p>
+        </article>
+        <article>
+          <button type="button" class="avatar photo" data-full="img/teachers/rachel.jpg" aria-label="View Rachel Jordana Horodezky">
+            <img src="img/teachers/rachel.jpg" alt="Rachel Jordana Horodezky">
+          </button>
+          <h3>Rachel Jordana</h3>
+          <p class="role">Music</p>
+          <p>Rachel is a licensed psychologist, 5Rhythms teacher, and DJ. She's been offering conscious dance since 2010, in rooms that range from clinics to festivals. Her sets are built for the floor, not for the booth.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="stay">
+      <h2>
+        <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 7.6 8 3.2l5.5 4.4V13.5H2.5Z"/></svg>
+        Stay
+      </h2>
+      <p>Prices are per person, in USD. Your room, the retreat, and three meals a day are included (vegetarian, chicken, or fish). Rooms go fast.</p>
+
+      <div class="houses">
+        <article class="house">
+          <button type="button" class="photo" data-full="img/rooms/mountain-1.png">
+            <img class="thumb" src="img/rooms/mountain-1.png" alt="Mountain House room with two queen beds">
+          </button>
+          <div>
+            <h3>Mountain House</h3>
+            <p class="note">Next to the dining room. Private bathrooms.</p>
+            <div class="row"><span>Single · queen · private bath</span><span class="price">$2,940</span></div>
+            <div class="row"><span>Double · two queens · bath shared with roommate</span><span class="price">$2,415</span></div>
+          </div>
+        </article>
+
+        <article class="house">
+          <button type="button" class="photo" data-full="img/rooms/arbor.png">
+            <img class="thumb" src="img/rooms/arbor.png" alt="Arbor House twin room">
+          </button>
+          <div>
+            <h3>Arbor House</h3>
+            <p class="note">Three-minute walk. Newly renovated. Shared baths.</p>
+            <div class="row"><span>Twin single · bath shared with 1 to 3 others</span><span class="price">$1,995-$2,100</span></div>
+            <div class="row"><span>Shared room · bath shared with 3 others</span><span class="price">$1,890</span></div>
+          </div>
+        </article>
+
+        <article class="house">
+          <button type="button" class="photo" data-full="img/rooms/ravine-1.png">
+            <img class="thumb" src="img/rooms/ravine-1.png" alt="Ravine House queen room">
+          </button>
+          <div>
+            <h3>Ravine House</h3>
+            <p class="note">Five-minute walk. The floor has two bathrooms, shared by up to six people.</p>
+            <div class="row"><span>Single · queen</span><span class="price">$1,953</span></div>
+            <div class="row"><span>Double · queen</span><span class="price">$1,848</span></div>
+            <div class="row"><span>Single · twin</span><span class="price">$1,848</span></div>
+            <div class="row"><span>Shared · two twins</span><span class="price">$1,680</span></div>
+          </div>
+        </article>
+
+        <article class="house land">
+          <div>
+            <h3>The land</h3>
+            <p class="note">Temple, dining room, the grounds, a winter lounge.</p>
+            <div class="land-thumbs">
+              <button type="button" class="photo" data-full="img/rooms/land-temple.jpg">
+                <img src="img/rooms/land-temple.jpg" alt="The Temple">
+              </button>
+              <button type="button" class="photo" data-full="img/rooms/land-dining.jpg">
+                <img src="img/rooms/land-dining.jpg" alt="The dining room">
+              </button>
+              <button type="button" class="photo" data-full="img/rooms/land-aerial.jpg">
+                <img src="img/rooms/land-aerial.jpg" alt="The Thyme from above">
+              </button>
+              <button type="button" class="photo" data-full="img/rooms/lounge.jpg">
+                <img src="img/rooms/lounge.jpg" alt="Lounge looking onto snow">
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="fine">Buying on the 360 site adds a 5% card fee. Venmo or ACH drops that 5%. Payment plans (two or three installments) and work-study ($360 off if you come early for setup and stay late for breakdown) go through Anna at <a href="mailto:info@the360emergence.com">info@the360emergence.com</a>.</p>
+      <p class="fine">If you want one queen as a couple, a named roommate, or a waitlist for a sold-out room, email Anna.</p>
+    </section>
+
+    <section class="section" id="cancel">
+      <h2>
+        <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 5h10M3 8h10M3 11h7"/></svg>
+        Cancellation
+      </h2>
+      <p>$500 of any registration is a non-refundable, non-transferable deposit. That part is firm.</p>
+      <ul>
+        <li>Through October 2: refund minus $500.</li>
+        <li>October 3 to November 4: refund minus $1,000.</li>
+        <li>After November 4: no refund, including illness, injury, or a death in the family.</li>
+      </ul>
+      <p>On a payment plan, the first 25% is non-refundable. After October 3, later payments become 360 credit for 18 months. After November 4, no refunds or transfers.</p>
+      <p>Get travel insurance if you can.</p>
+    </section>
+
+    <section class="section" id="travel">
+      <h2>
+        <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M7.2 3H13V8.8"/></svg>
+        Travel
+      </h2>
+      <p><strong>Arrive December 2.</strong> Check-in 3:00-4:45pm. Orientation 5:30pm.</p>
+      <p><strong>Leave December 6.</strong> Last session ends 12:45pm. Lunch at 1:00. Off the property by 2:30-3:00pm.</p>
+      <p>If you're flying in from another country, get to New York a day early so the trip up is easy. Give yourself two hours at the airport on the way out.</p>
+      <p>564 Under Mountain Road, Salisbury, CT 06068.</p>
+      <div class="airports">
+        <div><strong>SWF</strong><span>25-30 min · closest, few flights</span></div>
+        <div><strong>HPN</strong><span>50-60 min · regional</span></div>
+        <div><strong>EWR</strong><span>1 hr 15-30 · usually the best mix</span></div>
+        <div><strong>LGA</strong><span>1 hr 30-45 · traffic</span></div>
+        <div><strong>JFK</strong><span>1 hr 45-2+ hrs · international</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="book">
+      <h2>
+        <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.4" y="3.4" width="9.2" height="9.2"/></svg>
+        Book
+      </h2>
+      <p>You book through the 360 store. This page is just a simpler look at the same gathering.</p>
+      <div class="cta-row">
+        <a class="cta" href="https://the360emergence.com/product/the-call-module-1-new-york-the-thyme/">Book a room</a>
+        <a class="ghost" href="mailto:info@the360emergence.com">Email Anna to skip the 5% fee</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    The Call · December 2-6, 2026 · A 360 Emergence event at The Thyme.<br>
+    Questions: <a href="mailto:info@the360emergence.com">info@the360emergence.com</a>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" aria-label="Close">×</button>
+    <img alt="">
+  </div>
+
+  <script>
+    (function () {
+      var box = document.getElementById("lightbox");
+      var img = box.querySelector("img");
+      var closeBtn = box.querySelector(".lightbox-close");
+
+      function open(src, alt) {
+        img.src = src;
+        img.alt = alt || "";
+        box.hidden = false;
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+      }
+
+      function close() {
+        box.hidden = true;
+        img.removeAttribute("src");
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll(".photo").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var pic = btn.querySelector("img");
+          open(btn.getAttribute("data-full") || pic.src, pic.alt);
+        });
+      });
+
+      closeBtn.addEventListener("click", close);
+      box.addEventListener("click", function (e) {
+        if (e.target === box) close();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !box.hidden) close();
+      });
+    })();
+  </script>
+</body>
+</html>
