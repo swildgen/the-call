@@ -193,6 +193,20 @@
 
     .section p + p { margin-top: 1rem; }
 
+    .day {
+      font-size: 1.45rem;
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      max-width: 38rem;
+      padding-left: 1.25rem;
+      border-left: 1px solid var(--fg);
+    }
+
+    @media (max-width: 640px) {
+      .day { font-size: 1.25rem; padding-left: 1rem; }
+    }
+
     .section ul {
       margin: 1rem 0 0 1.1rem;
     }
@@ -537,8 +551,7 @@
         <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2"/></svg>
         A day
       </h2>
-      <p>Most of the day is guided dance and movement, with group work in between.</p>
-      <p>Some of it happens in a circle. You move while the whole group watches. That is exposing, and it is also where the biggest shifts tend to happen.</p>
+      <p class="day">Each day consists of guided dance and movement, along with group work. There will be some circle work, which is a vulnerable practice of moving while being witnessed by the entire group. The container is vulnerable and edgy, but that edginess also leads to massive transformation.</p>
     </section>
 
     <section class="section" id="teachers">
